@@ -3,7 +3,7 @@
 import {initializeApp} from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js"
 import {getDatabase, ref, push, onValue, remove} from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js"
 
-const dbAddress = process.env.dbObj
+const dbAddress = Netlify.env.dbObj
 
 const dbApp = initializeApp(dbAddress)
 const database = getDatabase(dbApp)
