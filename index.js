@@ -1,8 +1,11 @@
-import { dbObj } from "./env.js"
+
+
 import {initializeApp} from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js"
 import {getDatabase, ref, push, onValue, remove} from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js"
 
-const dbApp = initializeApp(dbObj)
+const dbAddress = process.env.dbObj
+
+const dbApp = initializeApp(dbAddress)
 const database = getDatabase(dbApp)
 const endorsementsInDb = ref(database, "endorsementList")
 
