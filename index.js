@@ -1,11 +1,11 @@
-import { Context } from "@netlify/edge-functions";
+import { dbObj } from "./env.js"
 
 import {initializeApp} from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js"
 import {getDatabase, ref, push, onValue, remove} from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js"
 
-const dbAddress = Netlify.env.dbObj
 
-const dbApp = initializeApp(dbAddress)
+
+const dbApp = initializeApp(dbObj)
 const database = getDatabase(dbApp)
 const endorsementsInDb = ref(database, "endorsementList")
 
